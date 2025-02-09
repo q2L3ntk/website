@@ -17,4 +17,8 @@ class LoginController extends Controller
     public function confirmPassword() {
         return view('confirm-password');
     }
+
+    public function verifyEmail() {
+        return view('verify-email');
+    }
 }

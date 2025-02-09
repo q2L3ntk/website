@@ -26,3 +26,5 @@ Route::get('/register', [RegisterController::class, 'create'])->name('register')
 Route::get('/forgot-password', [LoginController::class, 'forgotPassword'])->name('forgot-password');
 
 Route::get('/confirm-password', [LoginController::class, 'confirmPassword'])->name('confirm-password');
+
+Route::get('/verify-email', [LoginController::class, 'verifyEmail'])->name('verify-email');
