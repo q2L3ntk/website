@@ -8,7 +8,7 @@
     
     @vite('resources/css/app.css')
 </head>
-<body class="bg-gray-50 min-h-screen bg-[url('/public/images/background.svg')] bg-no-repeat bg-bottom bg-fixed">
+<body class="bg-gray-50 min-h-screen bg-[url('/public/images/layered-steps-haikei.svg')] bg-no-repeat bg-bottom bg-fixed">
     <header class="flex justify-between items-center p-6">
         <a href="#" class="flex items-center gap-2">
             <svg class="h-10 text-violet-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -44,15 +44,15 @@
                     </div>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Электронная почта</label>
+                    <label for="login" class="block text-sm font-medium text-gray-700">Электронная почта</label>
                     <div class="relative rounded-md shadow-sm mt-1">
                         <div class="absolute left-0 inset-y-0 flex items-center pl-3">
                             <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                             </svg>                                                           
                         </div>
-                        <input type="email" id="email" name="email" class="pl-10 pr-10 text-red-900 placeholder-red-300 border-red-300 rounded-md focus:border-red-500
-                        focus:ring-red-500 text-sm w-full" placeholder="Ваша почта">
+                        <input type="text" id="login" name="login" class="pl-10 pr-10 text-red-900 placeholder-red-300 border-red-300 rounded-md focus:border-red-500
+                        focus:ring-red-500 text-sm w-full" placeholder="Ваш логин">
                         <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                             <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
