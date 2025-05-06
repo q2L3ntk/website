@@ -44,11 +44,6 @@ class LoginController extends Controller
         return redirect()->route('welcome');
     }
 
-    public function forgotPassword() 
-    {
-        return view('auth.forgot-password');
-    }
-
     public function confirmPassword() 
     {
         return view('auth.confirm-password');

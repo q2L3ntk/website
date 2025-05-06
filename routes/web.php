@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +31,11 @@ Route::get('/register', [RegisterController::class, 'create'])->middleware('gues
 
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
-Route::get('/forgot-password', [LoginController::class, 'forgotPassword'])->name('forgot-password');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])->middleware('guest')->name('password.request');
+
+Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->middleware('guest')->name('password.email');
+
+Route::get('/reset-password', [ResetPasswordController::class, 'create'])->middleware('guest')->name('password.reset');
 
 Route::get('/confirm-password', [LoginController::class, 'confirmPassword'])->name('confirm-password');
 
