@@ -12,7 +12,7 @@
 </head>
 <body class="bg-gray-50 min-h-screen bg-[url('/public/images/background.svg')] bg-no-repeat bg-fixed bg-bottom">
     <header class="flex justify-between items-center p-6 bg-white shadow-lg">
-        <a href="#" class="flex gap-2 items-center">
+        <a href="{{ route('welcome') }}" class="flex gap-2 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 text-violet-500" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M13 7H7v6h6V7z" />
                 <path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd" />
@@ -20,17 +20,12 @@
             <span class="text-xl font-black">Tunica Hub</span>
         </a>
         <div class="flex gap-5">
-            @guest
-                <a href="{{ route('login') }}" class="flex justify-center items-center rounded-md bg-gray-200 py-2 px-4 text-gray-900 font-semibold shadow-lg hover:shadow-xl focus:shadow-xl
-                hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 transition duration-150 ease-in-out">Войти</a>
-                <a href="{{ route('register') }}" class="rounded-md bg-violet-600 py-2 px-4 text-white font-semibold shadow-lg hover:shadow-xl focus:shadow-xl
-                hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 transition duration-150 ease-in-out">Зарегистрироваться</a>
-            @endguest
-            @auth
-                <a href="{{ route('dashboard') }}" class="flex justify-center items-center rounded-md bg-gray-200 py-2 px-4 text-gray-900 font-semibold shadow-lg hover:shadow-xl focus:shadow-xl
-                hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 transition duration-150 ease-in-out">Назад</a>
-            @endauth
-        </div>    
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="rounded-md bg-violet-600 py-2 px-4 text-white font-semibold shadow-lg hover:shadow-xl focus:shadow-xl
+                hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 transition duration-150 ease-in-out">Выйти</a>
+            </form>
+        </div>
     </header>
     <main class="flex flex-col justify-center p-6 pb-12">
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
@@ -82,17 +77,6 @@
                     <span class="sr-only">Next</span>
                 </span>
             </button>
-        </div>
-        <div class="mt-6 sm:mt-10 p-6 sm:p-10 mx-auto w-full flex flex-col items-center">
-            <span class="text-2xl">Что нового</span>
-            <div class="grid grid-cols-3 gap-4">
-                @foreach ($news as $post)
-                    <div class="mt-10 shadow-lg p-9 rounded-md bg-white/80 backdrop-blur-xl">
-                        <a href="#" class="text-violet-600">{{ $post->title }}</a>
-                        <p class="text-gray-600">{{ $post->description }}</p>
-                    </div>
-                @endforeach
-            </div>
         </div>
     </main>
 </body>

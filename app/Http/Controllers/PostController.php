@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function welcome() {
+    public function create() 
+    {
         $news = DB::table('posts')->get();
         return view('welcome')->with('news', $news);
     }
